@@ -9,26 +9,20 @@ class Bar extends React.Component {
             x: 0,
             y: 0
         }
-        this.onMouseMove = this.onMouseMove.bind(this);
 
     }
 
 
 
-    onMouseMove(e) {
-        this.setState({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
-    }
 
     render() {
-        console.log(this.state.x);
-
         return (
-            <div onMouseMove={this.onMouseMove} class="bar z-depth-1" id={'bar' + this.props.number}>
-                <Line />
-                <Line />
-                <Line />
-                <Line />
-                <Line />
+            <div  class="bar z-depth-1" id={'bar' + this.props.number}>
+                <Line tune="F"/>
+                <Line tune="A"/>
+                <Line tune="C"/>
+                <Line tune="E"/>
+                <Line tune="G"/>
             </div>
         );
     }

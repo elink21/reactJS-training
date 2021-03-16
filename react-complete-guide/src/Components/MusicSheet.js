@@ -1,19 +1,23 @@
 import React from 'react';
 import Bar from './Bar';
 
-const MusicSheet = () => {
 
+class MusicSheet extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
+    render() {
 
-    return (<div class="musicSheet">
+        const bars = [];
+        for (let i = 0; i < this.props.bars; i++) {
+            bars.push(<Bar number={i} />);
+        }
 
-        <Bar number='1' />
-        <Bar number="2" />
-        <Bar number="3" />
-        <Bar number="4" />
-        <Bar number="5" />
-
-    </div>);
+        return (<div class="musicSheet">
+            {bars}
+        </div>);
+    }
 }
 
 export default MusicSheet;

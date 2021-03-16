@@ -14,11 +14,12 @@
 
 #editor {
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 1fr 14fr;
   width: 100%;
   #clefIcon {
     align-self: center;
     justify-self: center;
+    transform: translate(10px, 21px);
   }
 }
 
@@ -36,6 +37,23 @@
       background-color: #f50057 !important;
     }
   }
+
+  #rightButtons {
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    a {
+      background-color: white !important;
+      border: 1px solid #f50057;
+      i {
+        color: #f50057 !important;
+      }
+    }
+  }
 }
 
 #player {
@@ -50,58 +68,59 @@
 
 #sheet {
   overflow: hidden;
-  min-width: 0;
 }
 
 .musicSheet {
-  width: 100%;
-  max-width: 100%;
+  width: auto;
   height: 100%;
   max-height: 100%;
-  position: relative;
   overflow-x: scroll;
+  overflow-y: hidden;
   display: grid;
   grid-auto-flow: column;
-  padding-left: 10px;
-  padding-right: 10px;
-  gap:1px;
+  grid-template-columns:repeat(auto-fill,280px);
+  gap: 1px;
 }
 
 .bar {
   align-self: center;
   height: 80%;
-  width: 300px;
-  display:grid;
-  grid-template-rows: repeat(5,1fr);
-  div{
-      border:1px solid rgba(0, 0, 0, 0.452);
-      height:100%;
+  width: 280px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  div {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    height: 100%;
   }
 }
 
 /*Scrollbar styles*/
 ::-webkit-scrollbar {
-  height:10px;
+  height: 10px;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:#f50057;
+  background: #f50057;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  cursor:grab;
+  cursor: grab;
 }
 
-
-.line{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    div{
-        border:1px solid #f5005621;
-    }
+.line {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  div {
+    border: 1px solid #f5005621;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+  }
+  div:hover {
+    background-color: #f500567a;
+  }
 }
